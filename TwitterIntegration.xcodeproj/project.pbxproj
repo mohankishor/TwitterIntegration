@@ -12,12 +12,12 @@
 		072B318517A7C298006FC981 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072B318417A7C298006FC981 /* CoreGraphics.framework */; };
 		072B318B17A7C298006FC981 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 072B318917A7C298006FC981 /* InfoPlist.strings */; };
 		072B318D17A7C298006FC981 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B318C17A7C298006FC981 /* main.m */; };
-		072B319117A7C298006FC981 /* TIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B319017A7C298006FC981 /* TIAppDelegate.m */; };
 		072B319317A7C298006FC981 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 072B319217A7C298006FC981 /* Default.png */; };
 		072B319517A7C298006FC981 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 072B319417A7C298006FC981 /* Default@2x.png */; };
 		072B319717A7C298006FC981 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 072B319617A7C298006FC981 /* Default-568h@2x.png */; };
-		072B319A17A7C298006FC981 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072B319817A7C298006FC981 /* MainStoryboard.storyboard */; };
-		072B319D17A7C298006FC981 /* TIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B319C17A7C298006FC981 /* TIViewController.m */; };
+		072B31A617A7C38D006FC981 /* TIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31A517A7C38D006FC981 /* TIAppDelegate.m */; };
+		072B31AA17A7C3B1006FC981 /* TIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31A917A7C3B1006FC981 /* TIViewController.m */; };
+		072B31AF17A7C3E2006FC981 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072B31AE17A7C3E2006FC981 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,14 +29,14 @@
 		072B318A17A7C298006FC981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		072B318C17A7C298006FC981 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		072B318E17A7C298006FC981 /* TwitterIntegration-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitterIntegration-Prefix.pch"; sourceTree = "<group>"; };
-		072B318F17A7C298006FC981 /* TIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIAppDelegate.h; sourceTree = "<group>"; };
-		072B319017A7C298006FC981 /* TIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIAppDelegate.m; sourceTree = "<group>"; };
 		072B319217A7C298006FC981 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		072B319417A7C298006FC981 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		072B319617A7C298006FC981 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		072B319917A7C298006FC981 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		072B319B17A7C298006FC981 /* TIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIViewController.h; sourceTree = "<group>"; };
-		072B319C17A7C298006FC981 /* TIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIViewController.m; sourceTree = "<group>"; };
+		072B31A417A7C38D006FC981 /* TIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIAppDelegate.h; sourceTree = "<group>"; };
+		072B31A517A7C38D006FC981 /* TIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIAppDelegate.m; sourceTree = "<group>"; };
+		072B31A817A7C3B1006FC981 /* TIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIViewController.h; sourceTree = "<group>"; };
+		072B31A917A7C3B1006FC981 /* TIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIViewController.m; sourceTree = "<group>"; };
+		072B31AE17A7C3E2006FC981 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +83,9 @@
 		072B318617A7C298006FC981 /* TwitterIntegration */ = {
 			isa = PBXGroup;
 			children = (
-				072B318F17A7C298006FC981 /* TIAppDelegate.h */,
-				072B319017A7C298006FC981 /* TIAppDelegate.m */,
-				072B319817A7C298006FC981 /* MainStoryboard.storyboard */,
-				072B319B17A7C298006FC981 /* TIViewController.h */,
-				072B319C17A7C298006FC981 /* TIViewController.m */,
+				072B31AB17A7C3E2006FC981 /* Resources */,
+				072B31A317A7C38D006FC981 /* AppDelegate */,
+				072B31A717A7C3B1006FC981 /* Base View Controller */,
 				072B318717A7C298006FC981 /* Supporting Files */,
 			);
 			path = TwitterIntegration;
@@ -105,6 +103,48 @@
 				072B319617A7C298006FC981 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		072B31A317A7C38D006FC981 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				072B31A417A7C38D006FC981 /* TIAppDelegate.h */,
+				072B31A517A7C38D006FC981 /* TIAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		072B31A717A7C3B1006FC981 /* Base View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				072B31A817A7C3B1006FC981 /* TIViewController.h */,
+				072B31A917A7C3B1006FC981 /* TIViewController.m */,
+			);
+			path = "Base View Controller";
+			sourceTree = "<group>";
+		};
+		072B31AB17A7C3E2006FC981 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				072B31AC17A7C3E2006FC981 /* Images */,
+				072B31AD17A7C3E2006FC981 /* StoryBoard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		072B31AC17A7C3E2006FC981 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		072B31AD17A7C3E2006FC981 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				072B31AE17A7C3E2006FC981 /* MainStoryboard.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +203,7 @@
 				072B319317A7C298006FC981 /* Default.png in Resources */,
 				072B319517A7C298006FC981 /* Default@2x.png in Resources */,
 				072B319717A7C298006FC981 /* Default-568h@2x.png in Resources */,
-				072B319A17A7C298006FC981 /* MainStoryboard.storyboard in Resources */,
+				072B31AF17A7C3E2006FC981 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				072B318D17A7C298006FC981 /* main.m in Sources */,
-				072B319117A7C298006FC981 /* TIAppDelegate.m in Sources */,
-				072B319D17A7C298006FC981 /* TIViewController.m in Sources */,
+				072B31A617A7C38D006FC981 /* TIAppDelegate.m in Sources */,
+				072B31AA17A7C3B1006FC981 /* TIViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,14 +229,6 @@
 				072B318A17A7C298006FC981 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		072B319817A7C298006FC981 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				072B319917A7C298006FC981 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -264,6 +296,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwitterIntegration/TwitterIntegration-Prefix.pch";
 				INFOPLIST_FILE = "TwitterIntegration/TwitterIntegration-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -275,6 +308,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwitterIntegration/TwitterIntegration-Prefix.pch";
 				INFOPLIST_FILE = "TwitterIntegration/TwitterIntegration-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -299,6 +333,7 @@
 				072B31A217A7C298006FC981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
