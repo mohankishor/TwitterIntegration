@@ -16,12 +16,14 @@
 		072B319517A7C298006FC981 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 072B319417A7C298006FC981 /* Default@2x.png */; };
 		072B319717A7C298006FC981 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 072B319617A7C298006FC981 /* Default-568h@2x.png */; };
 		072B31A617A7C38D006FC981 /* TIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31A517A7C38D006FC981 /* TIAppDelegate.m */; };
-		072B31AA17A7C3B1006FC981 /* TIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31A917A7C3B1006FC981 /* TIViewController.m */; };
 		072B31AF17A7C3E2006FC981 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072B31AE17A7C3E2006FC981 /* MainStoryboard.storyboard */; };
 		072B31B717A7C665006FC981 /* TIActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31B317A7C665006FC981 /* TIActionSheet.m */; };
 		072B31B817A7C665006FC981 /* TIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31B617A7C665006FC981 /* TIAlertView.m */; };
 		072B31C017A7C684006FC981 /* TIActionSheetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31BC17A7C684006FC981 /* TIActionSheetManager.m */; };
 		072B31C117A7C684006FC981 /* TIAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31BF17A7C684006FC981 /* TIAlertViewManager.m */; };
+		072B31C517A7C7FC006FC981 /* TITwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31C417A7C7FC006FC981 /* TITwitterManager.m */; };
+		072B31CA17A7C9A1006FC981 /* TIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31C917A7C9A1006FC981 /* TIViewController.m */; };
+		072B31CE17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +40,6 @@
 		072B319617A7C298006FC981 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		072B31A417A7C38D006FC981 /* TIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIAppDelegate.h; sourceTree = "<group>"; };
 		072B31A517A7C38D006FC981 /* TIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIAppDelegate.m; sourceTree = "<group>"; };
-		072B31A817A7C3B1006FC981 /* TIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIViewController.h; sourceTree = "<group>"; };
-		072B31A917A7C3B1006FC981 /* TIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIViewController.m; sourceTree = "<group>"; };
 		072B31AE17A7C3E2006FC981 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		072B31B217A7C665006FC981 /* TIActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIActionSheet.h; sourceTree = "<group>"; };
 		072B31B317A7C665006FC981 /* TIActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIActionSheet.m; sourceTree = "<group>"; };
@@ -49,6 +49,12 @@
 		072B31BC17A7C684006FC981 /* TIActionSheetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIActionSheetManager.m; sourceTree = "<group>"; };
 		072B31BE17A7C684006FC981 /* TIAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIAlertViewManager.h; sourceTree = "<group>"; };
 		072B31BF17A7C684006FC981 /* TIAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIAlertViewManager.m; sourceTree = "<group>"; };
+		072B31C317A7C7FC006FC981 /* TITwitterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TITwitterManager.h; path = TwitterManager/TITwitterManager.h; sourceTree = "<group>"; };
+		072B31C417A7C7FC006FC981 /* TITwitterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TITwitterManager.m; path = TwitterManager/TITwitterManager.m; sourceTree = "<group>"; };
+		072B31C817A7C9A1006FC981 /* TIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIViewController.h; sourceTree = "<group>"; };
+		072B31C917A7C9A1006FC981 /* TIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIViewController.m; sourceTree = "<group>"; };
+		072B31CC17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TITwitterAccountSelectorViewController.h; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.h"; sourceTree = "<group>"; };
+		072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TITwitterAccountSelectorViewController.m; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,8 @@
 		072B318617A7C298006FC981 /* TwitterIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				072B31C617A7C9A1006FC981 /* ViewControllers */,
 				072B31A317A7C38D006FC981 /* AppDelegate */,
-				072B31A717A7C3B1006FC981 /* Base View Controller */,
 				072B31B917A7C684006FC981 /* Managers */,
 				072B31B017A7C665006FC981 /* Views */,
 				072B31AB17A7C3E2006FC981 /* Resources */,
@@ -126,15 +132,6 @@
 				072B31A517A7C38D006FC981 /* TIAppDelegate.m */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		072B31A717A7C3B1006FC981 /* Base View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				072B31A817A7C3B1006FC981 /* TIViewController.h */,
-				072B31A917A7C3B1006FC981 /* TIViewController.m */,
-			);
-			path = "Base View Controller";
 			sourceTree = "<group>";
 		};
 		072B31AB17A7C3E2006FC981 /* Resources */ = {
@@ -191,6 +188,7 @@
 		072B31B917A7C684006FC981 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				072B31C217A7C7CF006FC981 /* TwitterManager */,
 				072B31BA17A7C684006FC981 /* ActionSheetManager */,
 				072B31BD17A7C684006FC981 /* AlertViewManager */,
 			);
@@ -213,6 +211,42 @@
 				072B31BF17A7C684006FC981 /* TIAlertViewManager.m */,
 			);
 			path = AlertViewManager;
+			sourceTree = "<group>";
+		};
+		072B31C217A7C7CF006FC981 /* TwitterManager */ = {
+			isa = PBXGroup;
+			children = (
+				072B31C317A7C7FC006FC981 /* TITwitterManager.h */,
+				072B31C417A7C7FC006FC981 /* TITwitterManager.m */,
+			);
+			name = TwitterManager;
+			sourceTree = "<group>";
+		};
+		072B31C617A7C9A1006FC981 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				072B31CB17A7CCB2006FC981 /* Twitter Account Selector View Controller */,
+				072B31C717A7C9A1006FC981 /* Base View Controller */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		072B31C717A7C9A1006FC981 /* Base View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				072B31C817A7C9A1006FC981 /* TIViewController.h */,
+				072B31C917A7C9A1006FC981 /* TIViewController.m */,
+			);
+			path = "Base View Controller";
+			sourceTree = "<group>";
+		};
+		072B31CB17A7CCB2006FC981 /* Twitter Account Selector View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				072B31CC17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.h */,
+				072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */,
+			);
+			name = "Twitter Account Selector View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,11 +318,13 @@
 			files = (
 				072B318D17A7C298006FC981 /* main.m in Sources */,
 				072B31A617A7C38D006FC981 /* TIAppDelegate.m in Sources */,
-				072B31AA17A7C3B1006FC981 /* TIViewController.m in Sources */,
 				072B31B717A7C665006FC981 /* TIActionSheet.m in Sources */,
 				072B31B817A7C665006FC981 /* TIAlertView.m in Sources */,
 				072B31C017A7C684006FC981 /* TIActionSheetManager.m in Sources */,
 				072B31C117A7C684006FC981 /* TIAlertViewManager.m in Sources */,
+				072B31C517A7C7FC006FC981 /* TITwitterManager.m in Sources */,
+				072B31CA17A7C9A1006FC981 /* TIViewController.m in Sources */,
+				072B31CE17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
