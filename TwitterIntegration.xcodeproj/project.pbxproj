@@ -18,6 +18,10 @@
 		072B31A617A7C38D006FC981 /* TIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31A517A7C38D006FC981 /* TIAppDelegate.m */; };
 		072B31AA17A7C3B1006FC981 /* TIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31A917A7C3B1006FC981 /* TIViewController.m */; };
 		072B31AF17A7C3E2006FC981 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072B31AE17A7C3E2006FC981 /* MainStoryboard.storyboard */; };
+		072B31B717A7C665006FC981 /* TIActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31B317A7C665006FC981 /* TIActionSheet.m */; };
+		072B31B817A7C665006FC981 /* TIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31B617A7C665006FC981 /* TIAlertView.m */; };
+		072B31C017A7C684006FC981 /* TIActionSheetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31BC17A7C684006FC981 /* TIActionSheetManager.m */; };
+		072B31C117A7C684006FC981 /* TIAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31BF17A7C684006FC981 /* TIAlertViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,14 @@
 		072B31A817A7C3B1006FC981 /* TIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIViewController.h; sourceTree = "<group>"; };
 		072B31A917A7C3B1006FC981 /* TIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIViewController.m; sourceTree = "<group>"; };
 		072B31AE17A7C3E2006FC981 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		072B31B217A7C665006FC981 /* TIActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIActionSheet.h; sourceTree = "<group>"; };
+		072B31B317A7C665006FC981 /* TIActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIActionSheet.m; sourceTree = "<group>"; };
+		072B31B517A7C665006FC981 /* TIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIAlertView.h; sourceTree = "<group>"; };
+		072B31B617A7C665006FC981 /* TIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIAlertView.m; sourceTree = "<group>"; };
+		072B31BB17A7C684006FC981 /* TIActionSheetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIActionSheetManager.h; sourceTree = "<group>"; };
+		072B31BC17A7C684006FC981 /* TIActionSheetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIActionSheetManager.m; sourceTree = "<group>"; };
+		072B31BE17A7C684006FC981 /* TIAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIAlertViewManager.h; sourceTree = "<group>"; };
+		072B31BF17A7C684006FC981 /* TIAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIAlertViewManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +95,11 @@
 		072B318617A7C298006FC981 /* TwitterIntegration */ = {
 			isa = PBXGroup;
 			children = (
-				072B31AB17A7C3E2006FC981 /* Resources */,
 				072B31A317A7C38D006FC981 /* AppDelegate */,
 				072B31A717A7C3B1006FC981 /* Base View Controller */,
+				072B31B917A7C684006FC981 /* Managers */,
+				072B31B017A7C665006FC981 /* Views */,
+				072B31AB17A7C3E2006FC981 /* Resources */,
 				072B318717A7C298006FC981 /* Supporting Files */,
 			);
 			path = TwitterIntegration;
@@ -145,6 +159,60 @@
 				072B31AE17A7C3E2006FC981 /* MainStoryboard.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		072B31B017A7C665006FC981 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				072B31B117A7C665006FC981 /* ActionSheet */,
+				072B31B417A7C665006FC981 /* AlertView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		072B31B117A7C665006FC981 /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				072B31B217A7C665006FC981 /* TIActionSheet.h */,
+				072B31B317A7C665006FC981 /* TIActionSheet.m */,
+			);
+			path = ActionSheet;
+			sourceTree = "<group>";
+		};
+		072B31B417A7C665006FC981 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				072B31B517A7C665006FC981 /* TIAlertView.h */,
+				072B31B617A7C665006FC981 /* TIAlertView.m */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		072B31B917A7C684006FC981 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				072B31BA17A7C684006FC981 /* ActionSheetManager */,
+				072B31BD17A7C684006FC981 /* AlertViewManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		072B31BA17A7C684006FC981 /* ActionSheetManager */ = {
+			isa = PBXGroup;
+			children = (
+				072B31BB17A7C684006FC981 /* TIActionSheetManager.h */,
+				072B31BC17A7C684006FC981 /* TIActionSheetManager.m */,
+			);
+			path = ActionSheetManager;
+			sourceTree = "<group>";
+		};
+		072B31BD17A7C684006FC981 /* AlertViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				072B31BE17A7C684006FC981 /* TIAlertViewManager.h */,
+				072B31BF17A7C684006FC981 /* TIAlertViewManager.m */,
+			);
+			path = AlertViewManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +285,10 @@
 				072B318D17A7C298006FC981 /* main.m in Sources */,
 				072B31A617A7C38D006FC981 /* TIAppDelegate.m in Sources */,
 				072B31AA17A7C3B1006FC981 /* TIViewController.m in Sources */,
+				072B31B717A7C665006FC981 /* TIActionSheet.m in Sources */,
+				072B31B817A7C665006FC981 /* TIAlertView.m in Sources */,
+				072B31C017A7C684006FC981 /* TIActionSheetManager.m in Sources */,
+				072B31C117A7C684006FC981 /* TIAlertViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
