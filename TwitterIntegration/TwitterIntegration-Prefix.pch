@@ -16,3 +16,14 @@
 	#import "TITwitterManager.h"
 	#import "TIConstants.h"
 #endif
+
+#ifdef DEBUG
+
+#define TILog(...) NSLog(@"%s %i: %@",__PRETTY_FUNCTION__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+
+#else
+
+#define TILog(...) {}
+
+#endif
+

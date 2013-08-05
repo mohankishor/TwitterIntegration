@@ -29,6 +29,7 @@
 #pragma mark - Sign In Button Pressed
 
 - (IBAction)signinButtonPressed:(id)sender {
+	TILog(@"Sign In Button Pressed");
 	[TwitterManager signInWithTwitterWithParentController:self
 										  completionBlock:^(NSData *responseData) {
 												
