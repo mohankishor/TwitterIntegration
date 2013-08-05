@@ -28,6 +28,7 @@
 		07D280E117AFAB4C00713DC1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D280DF17AFAB3E00713DC1 /* Accounts.framework */; };
 		07D280EC17AFBE2C00713DC1 /* TIUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280EB17AFBE2C00713DC1 /* TIUserDefaults.m */; };
 		07D280F017AFBFF900713DC1 /* TITimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280EF17AFBFF900713DC1 /* TITimelineViewController.m */; };
+		07D280F417AFD4E700713DC1 /* TIComposeTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280F317AFD4E700713DC1 /* TIComposeTweetViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,8 @@
 		07D280EB17AFBE2C00713DC1 /* TIUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIUserDefaults.m; sourceTree = "<group>"; };
 		07D280EE17AFBFF900713DC1 /* TITimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TITimelineViewController.h; path = "Timeline View Controller/TITimelineViewController.h"; sourceTree = "<group>"; };
 		07D280EF17AFBFF900713DC1 /* TITimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TITimelineViewController.m; path = "Timeline View Controller/TITimelineViewController.m"; sourceTree = "<group>"; };
+		07D280F217AFD4E700713DC1 /* TIComposeTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIComposeTweetViewController.h; path = "Compose Tweet View Controller/TIComposeTweetViewController.h"; sourceTree = "<group>"; };
+		07D280F317AFD4E700713DC1 /* TIComposeTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIComposeTweetViewController.m; path = "Compose Tweet View Controller/TIComposeTweetViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +244,7 @@
 		072B31C617A7C9A1006FC981 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				07D280F117AFD4D500713DC1 /* Compose Tweet View Controller */,
 				07D280ED17AFBFC900713DC1 /* Timeline View Controller */,
 				072B31CB17A7CCB2006FC981 /* Twitter Account Selector View Controller */,
 				072B31C717A7C9A1006FC981 /* Base View Controller */,
@@ -299,6 +303,15 @@
 				07D280EF17AFBFF900713DC1 /* TITimelineViewController.m */,
 			);
 			name = "Timeline View Controller";
+			sourceTree = "<group>";
+		};
+		07D280F117AFD4D500713DC1 /* Compose Tweet View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07D280F217AFD4E700713DC1 /* TIComposeTweetViewController.h */,
+				07D280F317AFD4E700713DC1 /* TIComposeTweetViewController.m */,
+			);
+			name = "Compose Tweet View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +392,7 @@
 				072B31CE17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m in Sources */,
 				07D280EC17AFBE2C00713DC1 /* TIUserDefaults.m in Sources */,
 				07D280F017AFBFF900713DC1 /* TITimelineViewController.m in Sources */,
+				07D280F417AFD4E700713DC1 /* TIComposeTweetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

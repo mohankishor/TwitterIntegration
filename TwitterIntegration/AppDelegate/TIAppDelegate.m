@@ -12,7 +12,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSData *encodedTwitterAccount = [TI_User_Defaults twitterAccount];
+	if (encodedTwitterAccount) {
+		ACAccount *twitterAccount = [NSKeyedUnarchiver unarchiveObjectWithData:encodedTwitterAccount];
+		if (twitterAccount) {
+			
+		}
+	}
+	
     return YES;
 }
 							

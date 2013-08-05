@@ -39,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="664" y="112"/>
         </scene>
-        <!--Timeline View Controller-->
+        <!--Timeline View Controller - Timeline-->
         <scene sceneID="2ra-W4-i3g">
             <objects>
                 <viewController id="seY-wK-gLY" customClass="TITimelineViewController" sceneMemberID="viewController">
@@ -47,16 +47,16 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vdR-D4-ljc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="vdR-D4-ljc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="timelineTableViewCellIdentifier" id="wIK-Zd-Sti">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="timelineTableViewCellIdentifier" rowHeight="60" id="wIK-Zd-Sti">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -66,7 +66,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CEB-Qp-thC"/>
+                    <navigationItem key="navigationItem" title="Timeline" id="CEB-Qp-thC"/>
                     <connections>
                         <outlet property="timelineTableView" destination="vdR-D4-ljc" id="wAp-hb-MLp"/>
                         <segue destination="5cL-En-fgD" kind="push" identifier="composeTweetSegue" id="Imc-mm-qHa"/>
@@ -76,16 +76,16 @@
             </objects>
             <point key="canvasLocation" x="1235" y="502"/>
         </scene>
-        <!--View Controller-->
+        <!--Compose Tweet View Controller - Compose Tweet-->
         <scene sceneID="Wvc-Ap-jgb">
             <objects>
-                <viewController id="5cL-En-fgD" sceneMemberID="viewController">
+                <viewController id="5cL-En-fgD" customClass="TIComposeTweetViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1k1-Iq-fO0">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="r3A-17-cbg"/>
+                    <navigationItem key="navigationItem" title="Compose Tweet" id="r3A-17-cbg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LZ-tS-s1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,6 +150,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="TIComposeTweetViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TIComposeTweetViewController.h"/>
+        </class>
         <class className="TITimelineViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TITimelineViewController.h"/>
             <relationships>
