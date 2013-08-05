@@ -22,7 +22,7 @@
 	
 	self.title = @"Select Account";
 	
-	UIBarButtonItem *leftBarbuttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonItemPressed)];
+	UIBarButtonItem *leftBarbuttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemPressed)];
 	
 	[self.navigationItem setLeftBarButtonItem:leftBarbuttonItem];
 }
@@ -42,14 +42,17 @@
 
 - (void) leftBarButtonItemPressed
 {
-	
+	if (self.twitterAccountSelectionHandler) {
+		self.twitterAccountSelectionHandler(nil);
+		[self dismissViewControllerAnimated:YES completion:nil];
+	}
 }
 
 #pragma mark - Table View Delegate Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 1;
+	return [self.accountsArray count];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -65,7 +68,17 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTwitterAccountSelectorCellIdentifier];
 	}
 	
+	cell.textLabel.text = [NSString stringWithFormat:@"%@",[[self.accountsArray objectAtIndex:indexPath.row] username]];
+	
 	return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (self.twitterAccountSelectionHandler) {
+		self.twitterAccountSelectionHandler([self.accountsArray objectAtIndex:indexPath.row]);
+		[self dismissViewControllerAnimated:YES completion:nil];
+	}	
 }
 
 @end

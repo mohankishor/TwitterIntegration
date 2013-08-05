@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Accounts/Accounts.h>
+#import <Accounts/ACAccount.h>
+#import <Accounts/ACAccountStore.h>
+#import "TITwitterAccountSelectorViewController.h"
 
 #define TwitterManager [TITwitterManager sharedInstance]
 
 typedef void (^CompletionBlock)(NSData *responseData);
-typedef void (^ErrorBlock)(NSError *error);
+typedef void (^ErrorBlock)(NSString *errorString);
 
 @interface TITwitterManager : NSObject
 
@@ -20,7 +24,7 @@ typedef void (^ErrorBlock)(NSError *error);
 
 + (id) sharedInstance;
 
-- (void) signInWithTwitterWithParentController:(UIViewController *)controller
+- (void) signInWithTwitterWithParentController:(UIViewController *)parentController
 							   completionBlock:(CompletionBlock)completionBlock
 									errorBlock:(ErrorBlock)errorBlock;
 @end

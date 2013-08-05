@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^twitterAccountSelectionBlock)(ACAccount *selectedAccount);
+
 @interface TITwitterAccountSelectorViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray *accountsArray;
+
+@property (nonatomic, strong) twitterAccountSelectionBlock twitterAccountSelectionHandler;
 
 @end

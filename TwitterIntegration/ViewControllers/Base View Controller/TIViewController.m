@@ -29,11 +29,23 @@
 #pragma mark - Sign In Button Pressed
 
 - (IBAction)signinButtonPressed:(id)sender {
-	TILog(@"Sign In Button Pressed");
+	
+	[sender setEnabled:NO];
+	
 	[TwitterManager signInWithTwitterWithParentController:self
 										  completionBlock:^(NSData *responseData) {
-												
-										  } errorBlock:^(NSError *error) {
+											  
+												[sender setEnabled:YES];
+											  
+										  } errorBlock:^(NSString *errorString) {
+											  
+											  [sender setEnabled:YES];
+											  
+											  [AlertView showAlertViewWithTitle:@"Alert!"
+																		message:errorString
+															  cancelButtonTitle:@"OK"
+															  otherButtonTitles:nil
+																   alertHandler:nil];
 											  
 										  }];
 }
