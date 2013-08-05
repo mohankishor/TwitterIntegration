@@ -9,6 +9,10 @@
 #ifndef TwitterIntegration_TIConstants_h
 #define TwitterIntegration_TIConstants_h
 
-#define kTwitterAccountSelectorCellIdentifier @"twitterAccountSelectorCellIdentifier"
+#define kTwitterAccountSelectorTableViewCellIdentifier @"twitterAccountSelectorCellIdentifier"
+
+#define kTimelineTableViewCellIdentifier @"timelineTableViewCellIdentifier"
+
+#define kTimelineSegue @"timelineSegue"
 
 #endif

@@ -62,10 +62,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTwitterAccountSelectorCellIdentifier];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTwitterAccountSelectorTableViewCellIdentifier];
 	
 	if (!cell) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTwitterAccountSelectorCellIdentifier];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTwitterAccountSelectorTableViewCellIdentifier];
 	}
 	
 	cell.textLabel.text = [NSString stringWithFormat:@"%@",[[self.accountsArray objectAtIndex:indexPath.row] username]];

@@ -35,7 +35,9 @@
 	[TwitterManager signInWithTwitterWithParentController:self
 										  completionBlock:^(NSData *responseData) {
 											  
-												[sender setEnabled:YES];
+											  [sender setEnabled:YES];
+											  
+											  [self performSegueWithIdentifier:kTimelineSegue sender:self];
 											  
 										  } errorBlock:^(NSString *errorString) {
 											  

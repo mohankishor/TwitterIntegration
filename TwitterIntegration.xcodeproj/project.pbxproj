@@ -26,7 +26,8 @@
 		072B31CE17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */; };
 		07D280DE17AFAB1800713DC1 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D280DD17AFAB1800713DC1 /* Twitter.framework */; };
 		07D280E117AFAB4C00713DC1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D280DF17AFAB3E00713DC1 /* Accounts.framework */; };
-		07D280E517AFB82C00713DC1 /* TIUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280E417AFB82C00713DC1 /* TIUserDefaults.m */; };
+		07D280EC17AFBE2C00713DC1 /* TIUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280EB17AFBE2C00713DC1 /* TIUserDefaults.m */; };
+		07D280F017AFBFF900713DC1 /* TITimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280EF17AFBFF900713DC1 /* TITimelineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,11 +59,13 @@
 		072B31C917A7C9A1006FC981 /* TIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIViewController.m; sourceTree = "<group>"; };
 		072B31CC17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TITwitterAccountSelectorViewController.h; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.h"; sourceTree = "<group>"; };
 		072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TITwitterAccountSelectorViewController.m; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.m"; sourceTree = "<group>"; };
-		07D280DC17AFA54A00713DC1 /* TIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIConstants.h; sourceTree = "<group>"; };
 		07D280DD17AFAB1800713DC1 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		07D280DF17AFAB3E00713DC1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		07D280E317AFB82C00713DC1 /* TIUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIUserDefaults.h; sourceTree = "<group>"; };
-		07D280E417AFB82C00713DC1 /* TIUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIUserDefaults.m; sourceTree = "<group>"; };
+		07D280E817AFBE2C00713DC1 /* TIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIConstants.h; sourceTree = "<group>"; };
+		07D280EA17AFBE2C00713DC1 /* TIUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIUserDefaults.h; sourceTree = "<group>"; };
+		07D280EB17AFBE2C00713DC1 /* TIUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIUserDefaults.m; sourceTree = "<group>"; };
+		07D280EE17AFBFF900713DC1 /* TITimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TITimelineViewController.h; path = "Timeline View Controller/TITimelineViewController.h"; sourceTree = "<group>"; };
+		07D280EF17AFBFF900713DC1 /* TITimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TITimelineViewController.m; path = "Timeline View Controller/TITimelineViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +116,7 @@
 		072B318617A7C298006FC981 /* TwitterIntegration */ = {
 			isa = PBXGroup;
 			children = (
-				07D280DA17AFA52000713DC1 /* Utilities */,
+				07D280E617AFBE2C00713DC1 /* Common */,
 				072B31C617A7C9A1006FC981 /* ViewControllers */,
 				072B31A317A7C38D006FC981 /* AppDelegate */,
 				072B31B917A7C684006FC981 /* Managers */,
@@ -238,6 +241,7 @@
 		072B31C617A7C9A1006FC981 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				07D280ED17AFBFC900713DC1 /* Timeline View Controller */,
 				072B31CB17A7CCB2006FC981 /* Twitter Account Selector View Controller */,
 				072B31C717A7C9A1006FC981 /* Base View Controller */,
 			);
@@ -262,30 +266,39 @@
 			name = "Twitter Account Selector View Controller";
 			sourceTree = "<group>";
 		};
-		07D280DA17AFA52000713DC1 /* Utilities */ = {
+		07D280E617AFBE2C00713DC1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				07D280E217AFB81400713DC1 /* User Defaults */,
-				07D280DB17AFA52000713DC1 /* Constants */,
+				07D280E717AFBE2C00713DC1 /* Constants */,
+				07D280E917AFBE2C00713DC1 /* User Defaults */,
 			);
-			path = Utilities;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		07D280DB17AFA52000713DC1 /* Constants */ = {
+		07D280E717AFBE2C00713DC1 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				07D280DC17AFA54A00713DC1 /* TIConstants.h */,
+				07D280E817AFBE2C00713DC1 /* TIConstants.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		07D280E217AFB81400713DC1 /* User Defaults */ = {
+		07D280E917AFBE2C00713DC1 /* User Defaults */ = {
 			isa = PBXGroup;
 			children = (
-				07D280E317AFB82C00713DC1 /* TIUserDefaults.h */,
-				07D280E417AFB82C00713DC1 /* TIUserDefaults.m */,
+				07D280EA17AFBE2C00713DC1 /* TIUserDefaults.h */,
+				07D280EB17AFBE2C00713DC1 /* TIUserDefaults.m */,
 			);
 			path = "User Defaults";
+			sourceTree = "<group>";
+		};
+		07D280ED17AFBFC900713DC1 /* Timeline View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07D280EE17AFBFF900713DC1 /* TITimelineViewController.h */,
+				07D280EF17AFBFF900713DC1 /* TITimelineViewController.m */,
+			);
+			name = "Timeline View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,7 +377,8 @@
 				072B31C517A7C7FC006FC981 /* TITwitterManager.m in Sources */,
 				072B31CA17A7C9A1006FC981 /* TIViewController.m in Sources */,
 				072B31CE17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m in Sources */,
-				07D280E517AFB82C00713DC1 /* TIUserDefaults.m in Sources */,
+				07D280EC17AFBE2C00713DC1 /* TIUserDefaults.m in Sources */,
+				07D280F017AFBFF900713DC1 /* TITimelineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
