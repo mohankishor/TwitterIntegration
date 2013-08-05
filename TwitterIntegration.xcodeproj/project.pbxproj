@@ -55,6 +55,7 @@
 		072B31C917A7C9A1006FC981 /* TIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIViewController.m; sourceTree = "<group>"; };
 		072B31CC17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TITwitterAccountSelectorViewController.h; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.h"; sourceTree = "<group>"; };
 		072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TITwitterAccountSelectorViewController.m; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.m"; sourceTree = "<group>"; };
+		07D280DC17AFA54A00713DC1 /* TIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		072B318617A7C298006FC981 /* TwitterIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				07D280DA17AFA52000713DC1 /* Utilities */,
 				072B31C617A7C9A1006FC981 /* ViewControllers */,
 				072B31A317A7C38D006FC981 /* AppDelegate */,
 				072B31B917A7C684006FC981 /* Managers */,
@@ -247,6 +249,22 @@
 				072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */,
 			);
 			name = "Twitter Account Selector View Controller";
+			sourceTree = "<group>";
+		};
+		07D280DA17AFA52000713DC1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				07D280DB17AFA52000713DC1 /* Constants */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		07D280DB17AFA52000713DC1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				07D280DC17AFA54A00713DC1 /* TIConstants.h */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

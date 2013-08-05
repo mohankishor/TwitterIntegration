@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TITwitterAccountSelectorViewController : UIViewController
+@interface TITwitterAccountSelectorViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

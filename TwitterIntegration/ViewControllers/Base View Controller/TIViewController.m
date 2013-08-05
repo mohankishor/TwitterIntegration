@@ -29,7 +29,12 @@
 #pragma mark - Sign In Button Pressed
 
 - (IBAction)signinButtonPressed:(id)sender {
-	
+	[TwitterManager signInWithTwitterWithParentController:self
+										  completionBlock:^(NSData *responseData) {
+												
+										  } errorBlock:^(NSError *error) {
+											  
+										  }];
 }
 
 @end

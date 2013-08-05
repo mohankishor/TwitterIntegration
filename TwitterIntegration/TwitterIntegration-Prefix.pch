@@ -14,4 +14,5 @@
 	#import "TIAlertViewManager.h"
 	#import "TIActionSheetManager.h"
 	#import "TITwitterManager.h"
+	#import "TIConstants.h"
 #endif
