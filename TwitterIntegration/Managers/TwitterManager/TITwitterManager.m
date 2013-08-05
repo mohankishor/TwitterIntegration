@@ -28,52 +28,64 @@
 							   completionBlock:(CompletionBlock)completionBlock
 									errorBlock:(ErrorBlock)errorBlock
 {
-	ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+	if (!self.accountStore)	self.accountStore = [[ACAccountStore alloc] init];
 	
-	ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+	ACAccountType *accountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
 	
-	[accountStore requestAccessToAccountsWithType:accountType
-							withCompletionHandler:^(BOOL granted, NSError *error) {
-								dispatch_async(dispatch_get_main_queue(), ^{
-									if (granted) {
-										NSArray *twitterAccountsArray = [accountStore accountsWithAccountType:accountType];
-										
-										if ([twitterAccountsArray count]) {
-											
-											UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-											
-											TITwitterAccountSelectorViewController *twitterAccountSelectorViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TwitterAccountSelector"];
-											twitterAccountSelectorViewController.accountsArray = [twitterAccountsArray mutableCopy];
-											twitterAccountSelectorViewController.twitterAccountSelectionHandler = ^(ACAccount *selectedAccount){
-												if (selectedAccount) {
-													TILog(@"%@",[selectedAccount username]);
-													
-													NSData *encodedData = [NSKeyedArchiver archivedDataWithRootObject:selectedAccount];
-													[TI_User_Defaults setTwitterAccount:encodedData];
-													completionBlock(encodedData);
-												}
-											};
-											
-											UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:twitterAccountSelectorViewController];
-											
-											[parentController presentViewController:navigationController animated:YES completion:nil];
-											
-										}
-										else
-										{
-											if (errorBlock) {
-												errorBlock(@"Please add twitter accounts in Settings.");
-											}
-										}
-									}
-									else
-									{
-										if (errorBlock) {
-											errorBlock(@"Please add twitter accounts and grant access to the app in Settings.");
-										}
-									}
-								});
-							}];
+	[self.accountStore requestAccessToAccountsWithType:accountType
+								 withCompletionHandler:^(BOOL granted, NSError *error) {
+									 dispatch_async(dispatch_get_main_queue(), ^{
+										 if (granted) {
+											 
+											 NSArray *twitterAccountsArray = [self.accountStore accountsWithAccountType:accountType];
+											 
+											 if ([twitterAccountsArray count]) {
+												 
+												 UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+												 
+												 TITwitterAccountSelectorViewController *twitterAccountSelectorViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TwitterAccountSelector"];
+												 
+												 twitterAccountSelectorViewController.twitterAccountSelectionHandler = ^(ACAccount *selectedAccount){
+													 if (selectedAccount) {
+														 TILog(@"%@",[selectedAccount username]);
+														 
+														 NSData *encodedData = [NSKeyedArchiver archivedDataWithRootObject:selectedAccount];
+														 [TI_User_Defaults setTwitterAccount:encodedData];
+														 
+														 if (completionBlock) {
+															 completionBlock(encodedData);
+														 }
+													 }
+													 else
+													 {
+														 if (errorBlock) {
+															 errorBlock(nil);
+														 }
+													 }
+												 };
+												 
+												 twitterAccountSelectorViewController.accountsArray = twitterAccountsArray;
+												 
+												 UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:twitterAccountSelectorViewController];
+												 
+												 [parentController presentViewController:navigationController animated:YES completion:nil];
+												 
+											 }
+											 else
+											 {
+												 if (errorBlock) {
+													 errorBlock(@"Please add twitter accounts in Settings.");
+												 }
+											 }
+										 }
+										 else
+										 {
+											 if (errorBlock) {
+												 errorBlock(@"Please add twitter accounts and grant access to the app in Settings.");
+											 }
+										 }
+									 });
+								 }];
 }
 
 @end

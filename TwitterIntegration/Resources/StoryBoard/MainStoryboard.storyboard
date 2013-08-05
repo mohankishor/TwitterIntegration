@@ -69,11 +69,27 @@
                     <navigationItem key="navigationItem" id="CEB-Qp-thC"/>
                     <connections>
                         <outlet property="timelineTableView" destination="vdR-D4-ljc" id="wAp-hb-MLp"/>
+                        <segue destination="5cL-En-fgD" kind="push" identifier="composeTweetSegue" id="Imc-mm-qHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoh-co-y84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1235" y="502"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Wvc-Ap-jgb">
+            <objects>
+                <viewController id="5cL-En-fgD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1k1-Iq-fO0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="r3A-17-cbg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6LZ-tS-s1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669" y="450"/>
         </scene>
         <!--Twitter Account Selector View Controller-->
         <scene sceneID="cK8-eS-fFv">

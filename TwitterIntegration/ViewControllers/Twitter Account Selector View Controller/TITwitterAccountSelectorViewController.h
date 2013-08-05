@@ -12,7 +12,7 @@ typedef void (^twitterAccountSelectionBlock)(ACAccount *selectedAccount);
 
 @interface TITwitterAccountSelectorViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray *accountsArray;
+@property (nonatomic, strong) NSArray *accountsArray;
 
 @property (nonatomic, strong) twitterAccountSelectionBlock twitterAccountSelectionHandler;
 

@@ -22,6 +22,8 @@ typedef void (^ErrorBlock)(NSString *errorString);
 @property (strong, nonatomic) CompletionBlock completionBlock;
 @property (strong, nonatomic) ErrorBlock errorBlock;
 
+@property (strong, nonatomic) ACAccountStore *accountStore;
+
 + (id) sharedInstance;
 
 - (void) signInWithTwitterWithParentController:(UIViewController *)parentController

@@ -15,4 +15,6 @@
 
 #define kTimelineSegue @"timelineSegue"
 
+#define kComposeTweetSegue @"composeTweetSegue"
+
 #endif

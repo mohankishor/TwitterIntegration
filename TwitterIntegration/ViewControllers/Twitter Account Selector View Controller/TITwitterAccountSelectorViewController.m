@@ -16,6 +16,13 @@
 
 @implementation TITwitterAccountSelectorViewController
 
+-(void)awakeFromNib
+{
+	[super awakeFromNib];
+	
+	self.accountsArray = [[NSArray alloc] init];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,6 +43,11 @@
 {
 	[self setTwitterAccountSelectorTableView:nil];
 	[super viewDidUnload];
+}
+
+-(void)dealloc
+{
+	[self setTwitterAccountSelectorTableView:nil];
 }
 
 #pragma mark - Cancel Button Pressed
@@ -68,7 +80,8 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTwitterAccountSelectorTableViewCellIdentifier];
 	}
 	
-	cell.textLabel.text = [NSString stringWithFormat:@"%@",[[self.accountsArray objectAtIndex:indexPath.row] username]];
+	ACAccount *twitterAccount = [self.accountsArray objectAtIndex:indexPath.row];
+	cell.textLabel.text = [twitterAccount username];
 	
 	return cell;
 }
@@ -76,7 +89,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	if (self.twitterAccountSelectionHandler) {
-		self.twitterAccountSelectionHandler([self.accountsArray objectAtIndex:indexPath.row]);
+		ACAccount *account = [self.accountsArray objectAtIndex:indexPath.row];
+		self.twitterAccountSelectionHandler(account);
 		[self dismissViewControllerAnimated:YES completion:nil];
 	}	
 }

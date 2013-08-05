@@ -43,12 +43,13 @@
 											  
 											  [sender setEnabled:YES];
 											  
-											  [AlertView showAlertViewWithTitle:@"Alert!"
-																		message:errorString
-															  cancelButtonTitle:@"OK"
-															  otherButtonTitles:nil
-																   alertHandler:nil];
-											  
+											  if (errorString) {
+												  [AlertView showAlertViewWithTitle:@"Alert!"
+																			message:errorString
+																  cancelButtonTitle:@"OK"
+																  otherButtonTitles:nil
+																	   alertHandler:nil];
+											  }
 										  }];
 }
 
