@@ -31,11 +31,6 @@
 	[super awakeFromNib];
 	
 	[self registerForKeyboardNotifications];
-	
-	UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-																						target:self
-																						action:@selector(doneButtonPressed)];
-	[self.navigationItem setRightBarButtonItem:rightBarButtonItem];
 }
 
 - (void)viewDidLoad
@@ -43,6 +38,12 @@
     [super viewDidLoad];
 
 	self.navigationItem.hidesBackButton = YES;
+	
+	UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Post"
+																		   style:UIBarButtonItemStylePlain
+																		  target:self
+																		  action:@selector(doneButtonPressed)];
+	[self.navigationItem setRightBarButtonItem:rightBarButtonItem];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,17 +74,17 @@
 	
 	if (![self.addTweetTextView.text isEqualToString:@""]) {
 		
-		self.view.userInteractionEnabled = NO;
-		self.navigationItem.rightBarButtonItem.enabled = NO;
-		__weak typeof(self) weakSelf = self;
+		[self disableInteractionsAndShowHUD];
 		
+		__weak typeof(self) weakSelf = self;
+
 		[TwitterManager postTweetWithMessage:self.addTweetTextView.text
 									   Image:imageData
 							 completionBlock:^(NSData *responseData) {
 								 
 								 dispatch_async(dispatch_get_main_queue(), ^{
-									 weakSelf.navigationItem.rightBarButtonItem.enabled = YES;
-									 weakSelf.view.userInteractionEnabled = YES;
+									
+									 [weakSelf enableInteractionsAndShowHUD];
 									 
 									 [AlertView showAlertViewWithTitle:@"Add Tweet"
 															   message:@"Tweet Posted Successfully."
@@ -95,9 +96,9 @@
 							 } errorBlock:^(NSString *errorString) {
 								 
 								 dispatch_async(dispatch_get_main_queue(), ^{
-									 weakSelf.navigationItem.rightBarButtonItem.enabled = YES;
-									 weakSelf.view.userInteractionEnabled = YES;
 									 
+									 [weakSelf enableInteractionsAndShowHUD];
+
 									 if (errorString) {
 										 [AlertView showAlertViewWithTitle:@"Add Tweet"
 																   message:errorString
@@ -119,20 +120,34 @@
 	}
 }
 
+#pragma mark - Enable/Disable Buttons
+
+- (void) enableInteractionsAndShowHUD
+{
+	self.navigationItem.rightBarButtonItem.enabled = YES;
+	self.view.userInteractionEnabled = YES;
+	[self hideHUD];
+}
+
+- (void) disableInteractionsAndShowHUD
+{
+	[self showHUDWithText:@"Loading..." withUserInteractionDisabled:NO];
+	self.view.userInteractionEnabled = NO;
+	self.navigationItem.rightBarButtonItem.enabled = NO;
+}
+
 #pragma mark - Tap Gesture Recognizer
 
 - (IBAction)tapGestureHandler:(UITapGestureRecognizer *)sender {
 	
 	[self.addTweetTextView resignFirstResponder];
 	
-	//Allocate image picker controller if image picker controller is not allocated
 	if (!self.pickerController) {
 		self.pickerController = [[UIImagePickerController alloc] init];
 		self.pickerController.delegate = self;
 		self.pickerController.allowsEditing = YES;
 	}
 	
-	//Allocate Array for holding action sheet buttons.Allocate the array every time because once the scope of the method is lost,it will be deallocated by arc.
 	__block NSMutableArray *actionSheetButtonsArray = [[NSMutableArray alloc] init];
 	
 	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
@@ -193,6 +208,29 @@
 
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - ProgressHUD Methods
+
+- (void) showHUDWithText:(NSString *) text withUserInteractionDisabled:(BOOL) isDisabled
+{
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+    hud.userInteractionEnabled = isDisabled;
+    hud.animationType = MBProgressHUDAnimationFade;
+    hud.dimBackground = YES;
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = text;
+    [self.view addSubview:hud];
+    [hud show:YES];
+}
+
+- (void) hideHUD
+{
+	MBProgressHUD *hud = [MBProgressHUD HUDForView:self.view];
+	[hud hide:YES];
+	[hud removeFromSuperViewOnHide];
+	hud = nil;
+}
+
 
 #pragma mark - Keyboard Notification Methods
 

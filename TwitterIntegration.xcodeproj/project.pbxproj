@@ -25,6 +25,7 @@
 		072B31CA17A7C9A1006FC981 /* TIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31C917A7C9A1006FC981 /* TIViewController.m */; };
 		072B31CE17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */; };
 		076D5BEB17B25FA600DE2456 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076D5BEA17B25FA600DE2456 /* MobileCoreServices.framework */; };
+		076D5BF117B2699600DE2456 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 076D5BF017B2699600DE2456 /* MBProgressHUD.m */; };
 		07D280DE17AFAB1800713DC1 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D280DD17AFAB1800713DC1 /* Twitter.framework */; };
 		07D280E117AFAB4C00713DC1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D280DF17AFAB3E00713DC1 /* Accounts.framework */; };
 		07D280EC17AFBE2C00713DC1 /* TIUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280EB17AFBE2C00713DC1 /* TIUserDefaults.m */; };
@@ -65,6 +66,8 @@
 		072B31CC17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TITwitterAccountSelectorViewController.h; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.h"; sourceTree = "<group>"; };
 		072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TITwitterAccountSelectorViewController.m; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.m"; sourceTree = "<group>"; };
 		076D5BEA17B25FA600DE2456 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		076D5BEF17B2699600DE2456 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		076D5BF017B2699600DE2456 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		07D280DD17AFAB1800713DC1 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		07D280DF17AFAB3E00713DC1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		07D280E817AFBE2C00713DC1 /* TIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIConstants.h; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		072B318617A7C298006FC981 /* TwitterIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				076D5BED17B2699600DE2456 /* Third Party */,
 				07D280E617AFBE2C00713DC1 /* Common */,
 				072B31C617A7C9A1006FC981 /* ViewControllers */,
 				072B31A317A7C38D006FC981 /* AppDelegate */,
@@ -282,6 +286,23 @@
 			name = "Twitter Account Selector View Controller";
 			sourceTree = "<group>";
 		};
+		076D5BED17B2699600DE2456 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				076D5BEE17B2699600DE2456 /* MBProgressHUD */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		076D5BEE17B2699600DE2456 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				076D5BEF17B2699600DE2456 /* MBProgressHUD.h */,
+				076D5BF017B2699600DE2456 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		07D280E617AFBE2C00713DC1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +420,7 @@
 				072B31CE17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m in Sources */,
 				07D280EC17AFBE2C00713DC1 /* TIUserDefaults.m in Sources */,
 				07D280F417AFD4E700713DC1 /* TIComposeTweetViewController.m in Sources */,
+				076D5BF117B2699600DE2456 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
