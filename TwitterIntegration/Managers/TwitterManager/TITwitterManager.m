@@ -88,4 +88,50 @@
 								 }];
 }
 
+#pragma mark - Post Tweet
+
+- (void) postTweetWithMessage:(NSString *)message
+						Image:(NSData *)imageData
+			  completionBlock:(CompletionBlock)completionBlock
+				   errorBlock:(ErrorBlock)errorBlock
+{
+	if([TWTweetComposeViewController canSendTweet]){
+		
+		NSData *encodedObject = [TI_User_Defaults twitterAccount];
+		ACAccount *account = (ACAccount *)[NSKeyedUnarchiver unarchiveObjectWithData: encodedObject];
+		
+		NSURL *url = [NSURL URLWithString:kUpdateStatusWithPhotoApiLink];
+		
+		TWRequest *request = [[TWRequest alloc] initWithURL:url parameters:nil requestMethod:TWRequestMethodPOST];
+		[request setAccount:account];
+		
+		if (imageData)
+		{
+			[request addMultiPartData:imageData
+							 withName:@"media[]"
+								 type:@"multipart/form-data"];
+		}
+		
+		[request addMultiPartData:[message dataUsingEncoding:NSUTF8StringEncoding]
+						 withName:@"status"
+							 type:@"multipart/form-data"];
+		
+		
+		[request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+			
+			if (!error) {
+				completionBlock(responseData);
+			}
+			else{
+				errorBlock(@"Failed to post in twitter.Please try after some time.");
+			}
+		}];
+	}
+	else
+	{
+		errorBlock(@"Failed to post in twitter.Please try after some time.");
+	}
+
+}
+
 @end

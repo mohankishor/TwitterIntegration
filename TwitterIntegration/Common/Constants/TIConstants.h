@@ -21,4 +21,6 @@
 
 #define kComposeTweetSegue @"composeTweetSegue"
 
+#define kUpdateStatusWithPhotoApiLink @"https://api.twitter.com/1.1/statuses/update_with_media.json"
+
 #endif

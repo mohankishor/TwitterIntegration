@@ -31,6 +31,11 @@
 	[super awakeFromNib];
 	
 	[self registerForKeyboardNotifications];
+	
+	UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+																						target:self
+																						action:@selector(doneButtonPressed)];
+	[self.navigationItem setRightBarButtonItem:rightBarButtonItem];
 }
 
 - (void)viewDidLoad
@@ -56,6 +61,62 @@
 -(void)dealloc
 {
 	[self unregisterForKeyboardNotifications];
+}
+
+#pragma mark - Done Button Pressed
+
+- (void) doneButtonPressed
+{
+	[self.addTweetTextView resignFirstResponder];
+	
+	NSData *imageData = UIImagePNGRepresentation(self.photoImageView.image);
+	
+	if (![self.addTweetTextView.text isEqualToString:@""]) {
+		
+		self.view.userInteractionEnabled = NO;
+		self.navigationItem.rightBarButtonItem.enabled = NO;
+		__weak typeof(self) weakSelf = self;
+		
+		[TwitterManager postTweetWithMessage:self.addTweetTextView.text
+									   Image:imageData
+							 completionBlock:^(NSData *responseData) {
+								 
+								 dispatch_async(dispatch_get_main_queue(), ^{
+									 weakSelf.navigationItem.rightBarButtonItem.enabled = YES;
+									 weakSelf.view.userInteractionEnabled = YES;
+									 
+									 [AlertView showAlertViewWithTitle:@"Add Tweet"
+															   message:@"Tweet Posted Successfully."
+													 cancelButtonTitle:@"OK"
+													 otherButtonTitles:nil
+														  alertHandler:nil];
+								 });
+								 
+							 } errorBlock:^(NSString *errorString) {
+								 
+								 dispatch_async(dispatch_get_main_queue(), ^{
+									 weakSelf.navigationItem.rightBarButtonItem.enabled = YES;
+									 weakSelf.view.userInteractionEnabled = YES;
+									 
+									 if (errorString) {
+										 [AlertView showAlertViewWithTitle:@"Add Tweet"
+																   message:errorString
+														 cancelButtonTitle:@"OK"
+														 otherButtonTitles:nil
+															  alertHandler:nil];
+									 }
+								 });
+								 
+							 }];
+	}
+	else
+	{
+		[AlertView showAlertViewWithTitle:@"Add Tweet"
+								  message:@"Please add some tweet."
+						cancelButtonTitle:@"OK"
+						otherButtonTitles:nil
+							 alertHandler:nil];
+	}
 }
 
 #pragma mark - Tap Gesture Recognizer

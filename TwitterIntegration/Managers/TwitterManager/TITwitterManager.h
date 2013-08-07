@@ -10,6 +10,8 @@
 #import <Accounts/Accounts.h>
 #import <Accounts/ACAccount.h>
 #import <Accounts/ACAccountStore.h>
+#import <Twitter/Twitter.h>
+#import <Social/Social.h>
 #import "TITwitterAccountSelectorViewController.h"
 
 #define TwitterManager [TITwitterManager sharedInstance]
@@ -29,4 +31,10 @@ typedef void (^ErrorBlock)(NSString *errorString);
 - (void) signInWithTwitterWithParentController:(UIViewController *)parentController
 							   completionBlock:(CompletionBlock)completionBlock
 									errorBlock:(ErrorBlock)errorBlock;
+
+- (void) postTweetWithMessage:(NSString *)message
+						Image:(NSData *)imageData
+			  completionBlock:(CompletionBlock)completionBlock
+				   errorBlock:(ErrorBlock)errorBlock;
+
 @end
