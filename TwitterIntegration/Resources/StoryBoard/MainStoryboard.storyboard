@@ -32,49 +32,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Signin" id="kBW-Iv-OrF"/>
                     <connections>
-                        <segue destination="seY-wK-gLY" kind="push" identifier="timelineSegue" id="V7e-6v-4OK"/>
+                        <segue destination="5cL-En-fgD" kind="push" identifier="composeTweetSegue" id="1pr-cZ-DTp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="112"/>
-        </scene>
-        <!--Timeline View Controller - Timeline-->
-        <scene sceneID="2ra-W4-i3g">
-            <objects>
-                <viewController id="seY-wK-gLY" customClass="TITimelineViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x9z-8g-wCs">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="vdR-D4-ljc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="timelineTableViewCellIdentifier" rowHeight="60" id="wIK-Zd-Sti">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="59"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Timeline" id="CEB-Qp-thC"/>
-                    <connections>
-                        <outlet property="timelineTableView" destination="vdR-D4-ljc" id="wAp-hb-MLp"/>
-                        <segue destination="5cL-En-fgD" kind="push" identifier="composeTweetSegue" id="Imc-mm-qHa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xoh-co-y84" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1235" y="502"/>
+            <point key="canvasLocation" x="783" y="238"/>
         </scene>
         <!--Compose Tweet View Controller - Compose Tweet-->
         <scene sceneID="Wvc-Ap-jgb">
@@ -83,13 +46,70 @@
                     <view key="view" contentMode="scaleToFill" id="1k1-Iq-fO0">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" image="photo_placeholder.png" id="W2T-rI-Wmp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4sV-jM-TeN" appends="YES" id="vWS-p7-oTy"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="qnB-fj-lwI" userLabel="Add Tweet Background View">
+                                <rect key="frame" x="0.0" y="469" width="320" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="comment_field.png" id="WJm-78-MPg" userLabel="Add Tweet Image View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="P11-Pt-TqS" userLabel="Add Tweet Text View">
+                                        <rect key="frame" x="0.0" y="1" width="278" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="5cL-En-fgD" id="uqr-eL-vM5"/>
+                                        </connections>
+                                    </textView>
+                                    <view contentMode="scaleToFill" id="yHC-F8-Fgq" userLabel="Tweet Length Counter Background View">
+                                        <rect key="frame" x="288" y="9" width="22" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="144" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XIf-SY-uzC" userLabel="Tweet Length Counter Label">
+                                                <rect key="frame" x="0.0" y="0.0" width="22" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.20784313730000001" green="0.65098039220000004" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Compose Tweet" id="r3A-17-cbg"/>
+                    <connections>
+                        <outlet property="addTweetBackgroundView" destination="qnB-fj-lwI" id="XRS-QF-3aq"/>
+                        <outlet property="addTweetTextView" destination="P11-Pt-TqS" id="TAh-OL-EI8"/>
+                        <outlet property="photoImageView" destination="W2T-rI-Wmp" id="aQH-Cf-4XB"/>
+                        <outlet property="tweetCharacterCounterLabel" destination="XIf-SY-uzC" id="xTd-gd-3fy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LZ-tS-s1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4sV-jM-TeN">
+                    <connections>
+                        <action selector="tapGestureHandler:" destination="5cL-En-fgD" id="RR6-kN-gvI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1669" y="450"/>
+            <point key="canvasLocation" x="1235" y="541"/>
         </scene>
         <!--Twitter Account Selector View Controller-->
         <scene sceneID="cK8-eS-fFv">
@@ -149,14 +169,19 @@
             <point key="canvasLocation" x="193" y="112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="comment_field.png" width="253" height="35"/>
+        <image name="photo_placeholder.png" width="60" height="45"/>
+    </resources>
     <classes>
         <class className="TIComposeTweetViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TIComposeTweetViewController.h"/>
-        </class>
-        <class className="TITimelineViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TITimelineViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="timelineTableView" candidateClass="UITableView"/>
+                <relationship kind="action" name="tapGestureHandler:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="addTweetBackgroundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="addTweetTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="photoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tweetCharacterCounterLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TITwitterAccountSelectorViewController" superclassName="UIViewController">

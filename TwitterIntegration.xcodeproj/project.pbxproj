@@ -24,11 +24,15 @@
 		072B31C517A7C7FC006FC981 /* TITwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31C417A7C7FC006FC981 /* TITwitterManager.m */; };
 		072B31CA17A7C9A1006FC981 /* TIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31C917A7C9A1006FC981 /* TIViewController.m */; };
 		072B31CE17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */; };
+		076D5BEB17B25FA600DE2456 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076D5BEA17B25FA600DE2456 /* MobileCoreServices.framework */; };
 		07D280DE17AFAB1800713DC1 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D280DD17AFAB1800713DC1 /* Twitter.framework */; };
 		07D280E117AFAB4C00713DC1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D280DF17AFAB3E00713DC1 /* Accounts.framework */; };
 		07D280EC17AFBE2C00713DC1 /* TIUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280EB17AFBE2C00713DC1 /* TIUserDefaults.m */; };
-		07D280F017AFBFF900713DC1 /* TITimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280EF17AFBFF900713DC1 /* TITimelineViewController.m */; };
 		07D280F417AFD4E700713DC1 /* TIComposeTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D280F317AFD4E700713DC1 /* TIComposeTweetViewController.m */; };
+		07FCA9C317B127A3002AEAEB /* comment_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FCA9BF17B127A3002AEAEB /* comment_field.png */; };
+		07FCA9C417B127A3002AEAEB /* comment_field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FCA9C017B127A3002AEAEB /* comment_field@2x.png */; };
+		07FCA9C517B127A3002AEAEB /* photo_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FCA9C117B127A3002AEAEB /* photo_placeholder.png */; };
+		07FCA9C617B127A3002AEAEB /* photo_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FCA9C217B127A3002AEAEB /* photo_placeholder@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,15 +64,18 @@
 		072B31C917A7C9A1006FC981 /* TIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIViewController.m; sourceTree = "<group>"; };
 		072B31CC17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TITwitterAccountSelectorViewController.h; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.h"; sourceTree = "<group>"; };
 		072B31CD17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TITwitterAccountSelectorViewController.m; path = "Twitter Account Selector View Controller/TITwitterAccountSelectorViewController.m"; sourceTree = "<group>"; };
+		076D5BEA17B25FA600DE2456 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		07D280DD17AFAB1800713DC1 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		07D280DF17AFAB3E00713DC1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		07D280E817AFBE2C00713DC1 /* TIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIConstants.h; sourceTree = "<group>"; };
 		07D280EA17AFBE2C00713DC1 /* TIUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIUserDefaults.h; sourceTree = "<group>"; };
 		07D280EB17AFBE2C00713DC1 /* TIUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIUserDefaults.m; sourceTree = "<group>"; };
-		07D280EE17AFBFF900713DC1 /* TITimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TITimelineViewController.h; path = "Timeline View Controller/TITimelineViewController.h"; sourceTree = "<group>"; };
-		07D280EF17AFBFF900713DC1 /* TITimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TITimelineViewController.m; path = "Timeline View Controller/TITimelineViewController.m"; sourceTree = "<group>"; };
 		07D280F217AFD4E700713DC1 /* TIComposeTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIComposeTweetViewController.h; path = "Compose Tweet View Controller/TIComposeTweetViewController.h"; sourceTree = "<group>"; };
 		07D280F317AFD4E700713DC1 /* TIComposeTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIComposeTweetViewController.m; path = "Compose Tweet View Controller/TIComposeTweetViewController.m"; sourceTree = "<group>"; };
+		07FCA9BF17B127A3002AEAEB /* comment_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment_field.png; sourceTree = "<group>"; };
+		07FCA9C017B127A3002AEAEB /* comment_field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment_field@2x.png"; sourceTree = "<group>"; };
+		07FCA9C117B127A3002AEAEB /* photo_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_placeholder.png; sourceTree = "<group>"; };
+		07FCA9C217B127A3002AEAEB /* photo_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_placeholder@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				072B318117A7C298006FC981 /* UIKit.framework in Frameworks */,
+				076D5BEB17B25FA600DE2456 /* MobileCoreServices.framework in Frameworks */,
 				07D280DE17AFAB1800713DC1 /* Twitter.framework in Frameworks */,
 				072B318317A7C298006FC981 /* Foundation.framework in Frameworks */,
 				07D280E117AFAB4C00713DC1 /* Accounts.framework in Frameworks */,
@@ -107,6 +115,7 @@
 		072B317F17A7C298006FC981 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				076D5BEA17B25FA600DE2456 /* MobileCoreServices.framework */,
 				07D280DF17AFAB3E00713DC1 /* Accounts.framework */,
 				07D280DD17AFAB1800713DC1 /* Twitter.framework */,
 				072B318017A7C298006FC981 /* UIKit.framework */,
@@ -165,6 +174,10 @@
 		072B31AC17A7C3E2006FC981 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				07FCA9BF17B127A3002AEAEB /* comment_field.png */,
+				07FCA9C017B127A3002AEAEB /* comment_field@2x.png */,
+				07FCA9C117B127A3002AEAEB /* photo_placeholder.png */,
+				07FCA9C217B127A3002AEAEB /* photo_placeholder@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -245,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				07D280F117AFD4D500713DC1 /* Compose Tweet View Controller */,
-				07D280ED17AFBFC900713DC1 /* Timeline View Controller */,
 				072B31CB17A7CCB2006FC981 /* Twitter Account Selector View Controller */,
 				072B31C717A7C9A1006FC981 /* Base View Controller */,
 			);
@@ -294,15 +306,6 @@
 				07D280EB17AFBE2C00713DC1 /* TIUserDefaults.m */,
 			);
 			path = "User Defaults";
-			sourceTree = "<group>";
-		};
-		07D280ED17AFBFC900713DC1 /* Timeline View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				07D280EE17AFBFF900713DC1 /* TITimelineViewController.h */,
-				07D280EF17AFBFF900713DC1 /* TITimelineViewController.m */,
-			);
-			name = "Timeline View Controller";
 			sourceTree = "<group>";
 		};
 		07D280F117AFD4D500713DC1 /* Compose Tweet View Controller */ = {
@@ -371,6 +374,10 @@
 				072B319517A7C298006FC981 /* Default@2x.png in Resources */,
 				072B319717A7C298006FC981 /* Default-568h@2x.png in Resources */,
 				072B31AF17A7C3E2006FC981 /* MainStoryboard.storyboard in Resources */,
+				07FCA9C317B127A3002AEAEB /* comment_field.png in Resources */,
+				07FCA9C417B127A3002AEAEB /* comment_field@2x.png in Resources */,
+				07FCA9C517B127A3002AEAEB /* photo_placeholder.png in Resources */,
+				07FCA9C617B127A3002AEAEB /* photo_placeholder@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +398,6 @@
 				072B31CA17A7C9A1006FC981 /* TIViewController.m in Sources */,
 				072B31CE17A7CCCB006FC981 /* TITwitterAccountSelectorViewController.m in Sources */,
 				07D280EC17AFBE2C00713DC1 /* TIUserDefaults.m in Sources */,
-				07D280F017AFBFF900713DC1 /* TITimelineViewController.m in Sources */,
 				07D280F417AFD4E700713DC1 /* TIComposeTweetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

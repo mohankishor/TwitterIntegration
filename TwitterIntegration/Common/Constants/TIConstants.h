@@ -13,7 +13,11 @@
 
 #define kTimelineTableViewCellIdentifier @"timelineTableViewCellIdentifier"
 
-#define kTimelineSegue @"timelineSegue"
+#define kAnimationDuration 0.25
+
+#define kMaxTweetCharacterCount 144
+
+#define kKeyboardHeight 216.0
 
 #define kComposeTweetSegue @"composeTweetSegue"
 

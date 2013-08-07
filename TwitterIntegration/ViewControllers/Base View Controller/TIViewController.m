@@ -32,16 +32,19 @@
 	
 	[sender setEnabled:NO];
 	
+	__weak typeof(self) weakSelf = self;
+	__weak typeof(sender) weakSender = sender;
+	
 	[TwitterManager signInWithTwitterWithParentController:self
 										  completionBlock:^(NSData *responseData) {
 											  
-											  [sender setEnabled:YES];
+											  [weakSender setEnabled:YES];
 											  
-											  [self performSegueWithIdentifier:kTimelineSegue sender:self];
+											  [weakSelf performSegueWithIdentifier:kComposeTweetSegue sender:self];
 											  
 										  } errorBlock:^(NSString *errorString) {
 											  
-											  [sender setEnabled:YES];
+											  [weakSender setEnabled:YES];
 											  
 											  if (errorString) {
 												  [AlertView showAlertViewWithTitle:@"Alert!"

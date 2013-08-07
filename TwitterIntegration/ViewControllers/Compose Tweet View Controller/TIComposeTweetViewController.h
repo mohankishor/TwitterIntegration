@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface TIComposeTweetViewController : UIViewController
+@interface TIComposeTweetViewController : UIViewController<UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end
