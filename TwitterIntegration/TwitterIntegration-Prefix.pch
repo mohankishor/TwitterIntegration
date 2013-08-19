@@ -16,6 +16,7 @@
 	#import "TITwitterManager.h"
 	#import "TIConstants.h"
 	#import "TIUserDefaults.h"
+	#import "TIUtilities.h"
 #endif
 
 #ifdef DEBUG

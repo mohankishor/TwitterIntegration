@@ -42,16 +42,19 @@
 											  
 											  [weakSelf performSegueWithIdentifier:kComposeTweetSegue sender:self];
 											  
-										  } errorBlock:^(NSString *errorString) {
+										  } errorBlock:^(NSError *error) {
 											  
 											  [weakSender setEnabled:YES];
 											  
-											  if (errorString) {
-												  [AlertView showAlertViewWithTitle:@"Signin"
-																			message:errorString
-																  cancelButtonTitle:@"OK"
-																  otherButtonTitles:nil
-																	   alertHandler:nil];
+											  if (error) {
+												  NSString *errorMessage = [TIUtilities errorMessageForErrorObject:error];
+												  if (errorMessage) {
+													  [AlertView showAlertViewWithTitle:@"Signin"
+																				message:errorMessage
+																	  cancelButtonTitle:@"OK"
+																	  otherButtonTitles:nil
+																		   alertHandler:nil];
+												  }
 											  }
 										  }];
 }

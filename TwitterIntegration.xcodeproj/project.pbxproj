@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071A8DB817C23E4C0051BDD6 /* TIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 071A8DB717C23E4C0051BDD6 /* TIUtilities.m */; };
 		072B318117A7C298006FC981 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072B318017A7C298006FC981 /* UIKit.framework */; };
 		072B318317A7C298006FC981 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072B318217A7C298006FC981 /* Foundation.framework */; };
 		072B318517A7C298006FC981 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072B318417A7C298006FC981 /* CoreGraphics.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		071A8DB617C23E4C0051BDD6 /* TIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIUtilities.h; path = Utilities/TIUtilities.h; sourceTree = "<group>"; };
+		071A8DB717C23E4C0051BDD6 /* TIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIUtilities.m; path = Utilities/TIUtilities.m; sourceTree = "<group>"; };
 		072B317D17A7C298006FC981 /* TwitterIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072B318017A7C298006FC981 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		072B318217A7C298006FC981 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		071A8DB517C23E390051BDD6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				071A8DB617C23E4C0051BDD6 /* TIUtilities.h */,
+				071A8DB717C23E4C0051BDD6 /* TIUtilities.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		072B317417A7C298006FC981 = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +318,7 @@
 		07D280E617AFBE2C00713DC1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				071A8DB517C23E390051BDD6 /* Utilities */,
 				07D280E717AFBE2C00713DC1 /* Constants */,
 				07D280E917AFBE2C00713DC1 /* User Defaults */,
 			);
@@ -421,6 +434,7 @@
 				07D280EC17AFBE2C00713DC1 /* TIUserDefaults.m in Sources */,
 				07D280F417AFD4E700713DC1 /* TIComposeTweetViewController.m in Sources */,
 				076D5BF117B2699600DE2456 /* MBProgressHUD.m in Sources */,
+				071A8DB817C23E4C0051BDD6 /* TIUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

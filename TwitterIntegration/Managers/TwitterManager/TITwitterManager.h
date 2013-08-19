@@ -17,7 +17,7 @@
 #define TwitterManager [TITwitterManager sharedInstance]
 
 typedef void (^CompletionBlock)(NSData *responseData);
-typedef void (^ErrorBlock)(NSString *errorString);
+typedef void (^ErrorBlock)(NSError *error);
 
 @interface TITwitterManager : NSObject
 

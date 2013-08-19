@@ -45,9 +45,8 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-	TIAlertView *PEalertView = (TIAlertView *)alertView;
-	if (PEalertView.alertHandler) {
-		PEalertView.alertHandler(buttonIndex);
+	if (((TIAlertView *)alertView).alertHandler) {
+		((TIAlertView *)alertView).alertHandler(buttonIndex);
 	}
 }
 

@@ -58,11 +58,9 @@
 #pragma mark - Action Sheet Delegate Method
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-	TIActionSheet *PEactionSheet = (TIActionSheet *)actionSheet;
-	
-	if (PEactionSheet.actionSheetHandler) {
-		PEactionSheet.actionSheetHandler(buttonIndex);
+{	
+	if (((TIActionSheet *)actionSheet).actionSheetHandler) {
+		((TIActionSheet *)actionSheet).actionSheetHandler(buttonIndex);
 	}
 }
 

@@ -74,14 +74,16 @@
 											 else
 											 {
 												 if (errorBlock) {
-													 errorBlock(@"Please add twitter accounts in Settings.");
+													 NSError *addTwitterAccountsError = [[NSError alloc] initWithDomain:kTwitterAddAccountsCustomErrorDomain code:kTwitterAddAccountsCustomErrorCode userInfo:@{kErrorKey: @"Please add twitter accounts in Settings."}];
+													 errorBlock(addTwitterAccountsError);
 												 }
 											 }
 										 }
 										 else
 										 {
 											 if (errorBlock) {
-												 errorBlock(@"Please add twitter accounts and grant access to the app in Settings.");
+												 NSError *addTwitterAccountsError = [[NSError alloc] initWithDomain:kTwitterAddAccountsCustomErrorDomain code:kTwitterAddAccountsCustomErrorCode userInfo:@{kErrorKey: @"Please add twitter accounts and grant access to the app in Settings."}];
+												 errorBlock(addTwitterAccountsError);
 											 }
 										 }
 									 });
@@ -123,13 +125,15 @@
 				completionBlock(responseData);
 			}
 			else{
-				errorBlock(@"Failed to post in twitter.Please try after some time.");
+				NSError *failedToPostError = [[NSError alloc] initWithDomain:kCannotPostInTwitterCustomErrorDomain code:kCannotPostInTwitterCustomErrorCode userInfo:@{kErrorKey: @"Failed to post in twitter.Please try after some time."}];
+				errorBlock(failedToPostError);
 			}
 		}];
 	}
 	else
 	{
-		errorBlock(@"Failed to post in twitter.Please try after some time.");
+		NSError *failedToPostError = [[NSError alloc] initWithDomain:kCannotPostInTwitterCustomErrorDomain code:kCannotPostInTwitterCustomErrorCode userInfo:@{kErrorKey: @"Failed to post in twitter.Please try after some time."}];
+		errorBlock(failedToPostError);
 	}
 
 }

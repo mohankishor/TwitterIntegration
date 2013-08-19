@@ -69,42 +69,45 @@
 - (void) doneButtonPressed
 {
 	[self.addTweetTextView resignFirstResponder];
-	
-	NSData *imageData = UIImagePNGRepresentation(self.photoImageView.image);
-	
+		
 	if (![self.addTweetTextView.text isEqualToString:@""]) {
 		
+		NSData *imageData = UIImagePNGRepresentation(self.photoImageView.image);
+
 		[self disableInteractionsAndShowHUD];
 		
 		__weak typeof(self) weakSelf = self;
-
+		
 		[TwitterManager postTweetWithMessage:self.addTweetTextView.text
 									   Image:imageData
 							 completionBlock:^(NSData *responseData) {
 								 
 								 dispatch_async(dispatch_get_main_queue(), ^{
-									
+									 
 									 [weakSelf enableInteractionsAndShowHUD];
 									 
-									 [AlertView showAlertViewWithTitle:@"Add Tweet"
+									 [AlertView showAlertViewWithTitle:@"Compose Tweet"
 															   message:@"Tweet Posted Successfully."
 													 cancelButtonTitle:@"OK"
 													 otherButtonTitles:nil
 														  alertHandler:nil];
 								 });
 								 
-							 } errorBlock:^(NSString *errorString) {
+							 } errorBlock:^(NSError *error) {
 								 
 								 dispatch_async(dispatch_get_main_queue(), ^{
 									 
 									 [weakSelf enableInteractionsAndShowHUD];
-
-									 if (errorString) {
-										 [AlertView showAlertViewWithTitle:@"Add Tweet"
-																   message:errorString
-														 cancelButtonTitle:@"OK"
-														 otherButtonTitles:nil
-															  alertHandler:nil];
+									 
+									 if (error) {
+										 NSString *errorMessage = [TIUtilities errorMessageForErrorObject:error];
+										 if (errorMessage) {
+											 [AlertView showAlertViewWithTitle:@"Compose Tweet"
+																	   message:errorMessage
+															 cancelButtonTitle:@"OK"
+															 otherButtonTitles:nil
+																  alertHandler:nil];
+										 }
 									 }
 								 });
 								 
@@ -112,7 +115,7 @@
 	}
 	else
 	{
-		[AlertView showAlertViewWithTitle:@"Add Tweet"
+		[AlertView showAlertViewWithTitle:@"Compose Tweet"
 								  message:@"Please add some tweet."
 						cancelButtonTitle:@"OK"
 						otherButtonTitles:nil
